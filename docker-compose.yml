@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  ssh_tunnel:
+    build: .
+    ports:
+      - "11022:22"
+      - "10000-10100:10000-10100"
+    volumes: 
+      - ./data/root/.ssh/:/root/.ssh/
+      - ./data/remote/.ssh/:/home/remote/.ssh/
